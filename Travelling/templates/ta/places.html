@@ -1,0 +1,12 @@
+{% extends 'ta/base.html' %}
+{% load static %}
+{% block title %}Places{% endblock %}
+{% block content %}
+<p>Cities</p>
+<input type="text" name="form-control" list="citylist" placeholder="FROM" width="300px">
+<datalist id="citylist">
+	{% for results in places %}
+	<option value="{{results.places}}">
+	{% endfor %}
+</datalist>
+{% endblock %}

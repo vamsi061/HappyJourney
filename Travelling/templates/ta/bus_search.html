@@ -1,0 +1,326 @@
+{% extends 'ta/base.html' %}
+{% load static %}
+{% block title %}Bus Searching{% endblock %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	{% for result in city %}
+			<h2>Buses are searching from <b>{{result.sou}}</b> to <b>{{result.des}}</b></h2>
+			<table border="1" style="margin-left:10%;margin-top:5%;">
+				<tr>
+					<td style="padding: 20px"><b>S.NO</b></td>
+					<td style="padding: 20px"><b>BUS Number</b></td>
+					<td style="padding: 20px"><b>Bus Type</b></td>
+					<td style="padding: 20px"><b>Bus Image</b></td>
+					<td style="padding: 20px"><b>Bus Timmings</b></td>
+					<td style="padding: 20px"><b>Action</b></td>
+				</tr>
+				{% if result.bus == 301 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td style="padding: 5px;"><button class="btn btn-primary "><a href="#" style="color:white">Book Tickets</a></button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 302 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 303 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 304 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 305 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 306 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 307 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 308 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 309 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 310 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 311 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% elif result.bus == 312 %}
+				<tr>
+					<td style="padding:5px"><h3>01</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-01</h3></td>		
+					<td style="padding: 5px"><h3>Pallevellugu</h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/TELUGU VELUGU.jpg' %}" alt="image not found" style="height: 150px;width:200px;"></td>
+					<td><h4>07:00 AM TO 08:50 AM</h4></td>
+					<td><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>02</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-02</h3></td>		
+					<td style="padding: 5px"><h3>Express<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/Express.jpg' %}" alt="image not found"style="height: 100px;width:200px;"></td>
+					<td><h4>10:15 AM TO 11:50 AM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				<tr>
+					<td style="padding:5px"><h3>03</h3></td>
+					<td style="padding: 5px"><h3>{{result.bus}}-03</h3></td>		
+					<td style="padding: 5px"><h3>Ultra Deluxe<h3></td>			
+					<td style="margin-left:25%;margin-right: 25%;padding:70px;"><img src="{% static 'images/download.jpg' %}" alt="image not found"style="height: 150px;width:200px;"></td>
+					<td><h4>15:30 PM TO 16:30 PM</h4></td>
+					<td style="padding: 5px"><button class="btn btn-primary">Book Tickets</button></td>
+				</tr>
+				{% else %}
+				<tr>
+					<h2>No Trips Found</h2>
+				</tr>
+				{% endif %}
+			</table>
+{% endfor %}
+</form>
+{% endblock%}

@@ -1,0 +1,11 @@
+{% extends 'ta/base.html' %}
+{% load static %}
+{% block title %}Bus Searching{% endblock %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	{% for result in city %}
+	<h2>Buses are searching from <b>{{result.sou}}</b> to <b>{{result.des}}</b></h2>
+	{% endfor %}
+</form>
+{% endblock %}
