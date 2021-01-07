@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from django.forms import ModelForm
-from Travelling.models import ImPfle,city
+from Travelling.models import ImPfle,Data,PassengerData
 
 class UsReg(UserCreationForm):
 	password1 = forms.CharField(widget=forms.PasswordInput(attrs={"class":"form-control","placeholder":"Enter Your Password"}))
@@ -78,14 +78,99 @@ class Imp(ModelForm):
 			}),
 		}
 
-class usdate(ModelForm):
+
+class Busdata(forms.ModelForm):
 	class Meta:
-		model = city
-		fields = ["da"]
+		model = Data
+		fields = ["source","destination","busid","busclass","timmings","distance","cost","busim","da"]
 		widgets = {
-		"da":forms.DateInput(attrs={
+		"source":forms.TextInput(attrs={
 			"class":"form-control",
-			"type":"date",
+			"placeholder":"Enter Source location",
 			"required":True,
 			}),
+		"destination":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter Destination location",
+			"required":True,
+			}),
+		"busid":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter Bus number",
+			"required":True,
+			}),
+		"busclass":forms.Select(attrs={
+			"class":"form-control",
+			"placeholder":"Select class",
+			"required":True,
+			}),
+		"timmings":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter Bus Timmings",
+			"required":True,
+			}),
+		"distance":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter the distance",
+			}),
+		"cost":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter cost",
+			}),
+		}
+
+class Upbus(forms.ModelForm):
+	class Meta:
+		model = Data
+		fields = ["busclass","distance","cost","busim"]
+		widgets = {
+		"busclass":forms.Select(attrs={
+			"class":"form-control",
+			"placeholder":"Select class",
+			"required":True,
+			}),
+		"distance":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter the distance",
+			}),
+		"cost":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter cost",
+			}),
+		}
+
+class usdate(ModelForm):
+	class Meta:
+		model = Data
+		fields = ["da"]
+
+class PassData(forms.ModelForm):
+	class Meta:
+		model = PassengerData
+		fields = ["pname","sorce","destnation","bustype","date","busid"]
+		widgets = {
+		"sorce":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter Source location",
+			"required":True,
+			}),
+		"pname":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter Passenger Name",
+			"required":True,
+			}),
+		"destnation":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter Destination location",
+			"required":True,
+			}),
+		"bustype":forms.Select(attrs={
+			"class":"form-control",
+			"placeholder":"Select Bus class",
+			}),
+		"busid":forms.NumberInput(attrs={
+			"class":"form-control",
+			"placeholder":"Enter your Busid",
+			"required":True,
+			})
 		}

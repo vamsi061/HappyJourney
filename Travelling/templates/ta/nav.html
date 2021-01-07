@@ -68,12 +68,11 @@ section a
 }
 .logo
 {
-      flex: 1 1 auto;
-    margin-left: 10%;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
-    font-size: 35px;
+    float: left;
+    margin-left: 0%;
 }
 .topnav a {
   float: left;
@@ -92,6 +91,7 @@ section a
 .second {
   float: left;
   overflow: hidden;
+  margin-top: -0.5%;
 }
 
 .second .third {
@@ -137,7 +137,7 @@ section a
   display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .topnav a:not(:first-child), .second .third {
     display: none;
   }
@@ -147,7 +147,7 @@ section a
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -169,20 +169,26 @@ section a
 }
 </style>
 <div class="topnav" id="myTopnav">
-  <span class="logo" href="#" style="text-decoration: none;float: left;">TRAVELS</span>
-  <a href="{% url 'hm' %}" style="padding: 25px; text-decoration: none; display: block;margin-left: 10%;text-transform: none;" class="text-dark"><i class="fas fa-home"></i>&nbsp;&nbsp;Home</a>
+  <span class="logo active" href="#">TRAVELS</span><a href="#">.</a>
+  <a href="{% url 'hm' %}" class="text-dark"><i class="fas fa-home"></i>&nbsp;&nbsp;Home</a>
   <div class="second" style="text-decoration: none;">
-    <button class="third text-dark" style="margin-top: 10px">Book Ticket
+    <button class="third text-dark" style="margin-top: 5px">Book Ticket
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="second-content text-dark" style="text-transform: none;">
       <a href="{% url 'bus' %}" style="text-transform: none;"><i class="fas fa-bus"></i>&nbsp;&nbsp;Bus</a>
-      <a href="#" style="text-transform: none;"><i class="fas fa-taxi"></i>&nbsp;&nbsp;Cab</a>
     </div>
   </div>
-    <a href="#" style="padding: 25px;text-decoration: none; display: block;text-transform: none;" class="text-dark"><i class="fas fa-ticket-alt"></i>&nbsp;&nbsp;My Bookings</a>
-    <a href="#" style="padding:25px;text-decoration: none; display: block;text-transform: none;" class="text-dark">Dash Board</a>
-    <a href="#contact" style="padding:25px;text-decoration: none; display: block;text-transform: none;" class="text-dark"><i class="far fa-id-card"></i>&nbsp;&nbsp;Contact</a>
+{% if perms.Travelling %}
+    <a href="{% url 'pasdata' %}" class="text-dark"><i class="fas fa-ticket-alt"></i>&nbsp;&nbsp;My Bookings</a>
+    <a href="{% url 'disp' %}" class="text-dark">&nbsp;&nbsp;Dash Board</a>
+  {% else %}
+    <a href="{% url 'pasdata' %}" class="text-dark"><i class="fas fa-ticket-alt"></i>&nbsp;&nbsp;My Bookings</a>
+    <a href="#" class="text-dark"><i class="far fa-id-card"></i>&nbsp;&nbsp;Contact</a>
+  {% endif %}
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
     <div class="second" style="text-decoration: none;">
       <button class="third text-dark" style="margin-top: 10px"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;My Account
         <i class="fa fa-caret-down"></i>
@@ -227,3 +233,13 @@ section a
       </div>
     </div>
 </div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
