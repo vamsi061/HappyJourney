@@ -40,6 +40,20 @@ Enter username & set password
 
 <img src="https://user-images.githubusercontent.com/73982062/214049313-2e023c59-190f-40c4-908a-4f3b22d4f23a.jpg" width=75% height=75%>
 
+# Live
+Live: <a href="https://5j9jwq-8000.csb.app/" target="_blank">https://5j9jwq-8000.csb.app/</a>
+
+# Deployment 
+
+### Data base
+ Mysql: <a href="https://freedb.tech/dashboard/" target="_blank">https://freedb.tech/dashboard/</a>
+ 	HOST : sql.freedb.tech
+  	username : freedb_vamsi
+   	password : NEhj&6MjH764xgV
+### To manage Database
+ Phpmyadmin : https://www.phpmyadminonline.com/
+ 	
+
 
 
 
